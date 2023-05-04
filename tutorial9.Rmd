@@ -4,3 +4,18 @@ output: html_document
 date: "2023-05-04"
 ---
 
+```{r}
+library(tidyverse)
+library(ggrepel)
+```
+
+```{r}
+
+crime_data <- read_csv("Data_Tables_Criminal_Incidents_Visualisation_Year_Ending_December_2019.csv")
+
+crime_data <- head(crime_data,10) %>% rename(abc = "Offence Subgroup", xyz = "Incidents Recorded")
+
+ggplot(crime_data, aes(x=xyz, y=abc)) + geom_point(color= "red") + labs(x = "Incidents Recorded", y = "Offence Subgroup", title = "Crime data") + theme(legend.position = 'none')
+  
+```
+
