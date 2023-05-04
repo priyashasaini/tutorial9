@@ -18,8 +18,6 @@ crime_data <- read_csv("Data_Tables_Criminal_Incidents_Visualisation_Year_Ending
 crime_data <- head(crime_data,10) %>% rename(abc = "Offence Subgroup", xyz = "Incidents Recorded")
 
 ggplot(crime_data, aes(x=xyz, y=abc)) + geom_point(color= "red") + labs(x = "Incidents Recorded", y = "Offence Subgroup", title = "Crime data") + theme(legend.position = 'none')
-  
-
 
 
 ```
