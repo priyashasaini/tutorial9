@@ -4,3 +4,28 @@ output: html_document
 date: "2023-05-04"
 ---
 
+
+```{r}
+
+library(tidyverse)
+library(ggplot2)
+
+```
+
+```{r}
+
+data <- read_csv("Data_Tables_Criminal_Incidents_Visualisation_Year_Ending_December_2019.csv")
+
+```
+```{r}
+
+a <- head(data, 10) %>% 
+  rename(OS = "Offence Subgroup", Rate = "Rate per 100,000 population")
+
+ggplot(a, aes(x = OS, y = Rate)) +
+  geom_point(color = "blue") +
+  labs(x = "Offence Division", y = "Rate per 100,000 population", title = "Scatter plot of Offence Subgroup") +
+  coord_flip()
+
+```
+
